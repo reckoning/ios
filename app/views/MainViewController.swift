@@ -21,11 +21,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         load()
         
+        let primaryColor = UIColor(red:0.259,  green:0.545,  blue:0.792, alpha:1)
+        let grayColor = UIColor(red:0.200,  green:0.200,  blue:0.200, alpha:1)
+        
         let addTimerButton = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
             action: #selector(MainViewController.add)
         )
+        addTimerButton.tintColor = primaryColor
         self.navigationItem.rightBarButtonItem  = addTimerButton
         
         let reloadButton = UIBarButtonItem(
@@ -33,7 +37,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             target: self,
             action: #selector(MainViewController.load)
         )
-        self.navigationItem.leftBarButtonItem  = reloadButton
+        reloadButton.tintColor = primaryColor
+        self.navigationItem.leftBarButtonItem = reloadButton
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: grayColor,
+             NSFontAttributeName: UIFont(name: "Orbitron-Regular", size: 21)!]
         
         timerList.dataSource = self
         timerList.delegate = self
@@ -55,7 +63,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @available(iOS 2.0, *)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
+        let identifier = "timerCell"
+        var cell: TimerCell! = tableView.dequeueReusableCell(withIdentifier: identifier) as? TimerCell
+        if cell == nil {
+            tableView.register(UINib(nibName: "TimerCell", bundle: nil), forCellReuseIdentifier: identifier)
+            cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? TimerCell
+        }
         
         let timer = timers[indexPath.row]
         
@@ -65,6 +78,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.interval.invalidate()
             }
             self.interval = Foundation.Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainViewController.update), userInfo: nil, repeats: true)
+            cell.runningIndicator.startAnimating()
+        } else {
+            cell.runningIndicator.stopAnimating()
         }
         
         if self.runningTimer == nil {
@@ -74,10 +90,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.interval = nil
         }
         
-        cell.textLabel?.text = timer.projectName
-        cell.detailTextLabel!.text = timeText(timer: timer)
+        cell.title.text = timer.projectName
+        cell.customer.text = timer.projectCustomerName
+        cell.subTitle.text = timer.taskName
+        cell.hours.text = timeText(timer: timer)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75.0;
     }
 
     //MARK: Actions
@@ -102,12 +124,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 switch response.result {
                 case .success:
                     let json: Any? = try? JSONSerialization.jsonObject(with: response.data!, options: [])
+                    var runningTimerPresent: Bool = false
+                    self.timers = []
                     for j in json as! Array<Any> {
                         let decodedTimer = Timer.decode(JSON(j))
                         let timer = decodedTimer.value
-                        if !self.timers.contains(where: {$0.id == timer?.id}) {
-                            self.timers.append(timer!)
+                        self.timers.append(timer!)
+                        if timer?.startedAt != nil {
+                            runningTimerPresent = true
                         }
+                    }
+                    if !runningTimerPresent {
+                        self.runningTimer = nil
                     }
                     self.timerList.reloadData()
                 case .failure(let error):

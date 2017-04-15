@@ -15,6 +15,8 @@ struct Timer {
     let value: String
     let startedAt: String?
     let projectName: String
+    let projectCustomerName: String
+    let taskName: String
 }
 
 extension Timer: Decodable {
@@ -24,5 +26,7 @@ extension Timer: Decodable {
         <*> j <| "value"
         <*> j <|? "startedAt"
         <*> j <| "projectName"
+        <*> j <| "projectCustomerName"
+        <*> j <| "taskName"
     }
 }

@@ -10,18 +10,28 @@
 		1FA385F6DCB0DE04A47EA107 /* Pods_appAlpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D11CCAD9B9FB9407FDCC0C37 /* Pods_appAlpha.framework */; };
 		943B67A01EA229EE00F05CD8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B679F1EA229EE00F05CD8 /* Configuration.swift */; };
 		943B67A11EA229EE00F05CD8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B679F1EA229EE00F05CD8 /* Configuration.swift */; };
+		943B67A71EA26F8600F05CD8 /* Orbitron-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943B67A31EA26F8600F05CD8 /* Orbitron-Black.ttf */; };
+		943B67A81EA26F8600F05CD8 /* Orbitron-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943B67A31EA26F8600F05CD8 /* Orbitron-Black.ttf */; };
+		943B67A91EA26F8600F05CD8 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943B67A41EA26F8600F05CD8 /* Orbitron-Bold.ttf */; };
+		943B67AA1EA26F8600F05CD8 /* Orbitron-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943B67A41EA26F8600F05CD8 /* Orbitron-Bold.ttf */; };
+		943B67AB1EA26F8600F05CD8 /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943B67A51EA26F8600F05CD8 /* Orbitron-Medium.ttf */; };
+		943B67AC1EA26F8600F05CD8 /* Orbitron-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943B67A51EA26F8600F05CD8 /* Orbitron-Medium.ttf */; };
+		943B67AD1EA26F8600F05CD8 /* Orbitron-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943B67A61EA26F8600F05CD8 /* Orbitron-Regular.ttf */; };
+		943B67AE1EA26F8600F05CD8 /* Orbitron-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943B67A61EA26F8600F05CD8 /* Orbitron-Regular.ttf */; };
+		943B67B01EA29A9C00F05CD8 /* TimerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943B67AF1EA29A9C00F05CD8 /* TimerCell.xib */; };
+		943B67B11EA29A9C00F05CD8 /* TimerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943B67AF1EA29A9C00F05CD8 /* TimerCell.xib */; };
+		943B67B31EA2A5EE00F05CD8 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B67B21EA2A5EE00F05CD8 /* TimerCell.swift */; };
+		943B67B41EA2A5EE00F05CD8 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B67B21EA2A5EE00F05CD8 /* TimerCell.swift */; };
 		945DF3B51EA0DCA90058DF8D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945DF3B31EA0DCA90058DF8D /* MainViewController.swift */; };
 		945DF3B61EA0DCA90058DF8D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945DF3B41EA0DCA90058DF8D /* MainViewController.xib */; };
 		94887BD21E9FFCA100077AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94887BD11E9FFCA100077AB8 /* AppDelegate.swift */; };
 		94887BDB1E9FFCA100077AB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94887BDA1E9FFCA100077AB8 /* Assets.xcassets */; };
 		94887BE91E9FFCA100077AB8 /* appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94887BE81E9FFCA100077AB8 /* appTests.swift */; };
 		94887BF41E9FFCA100077AB8 /* appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94887BF31E9FFCA100077AB8 /* appUITests.swift */; };
-		9493C7891EA134AF003944D2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9493C7881EA134AF003944D2 /* Launch Screen.storyboard */; };
 		9493C78D1EA13D70003944D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94887BD11E9FFCA100077AB8 /* AppDelegate.swift */; };
 		9493C78E1EA13D70003944D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945DF3B31EA0DCA90058DF8D /* MainViewController.swift */; };
 		9493C7921EA13D70003944D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94887BDA1E9FFCA100077AB8 /* Assets.xcassets */; };
 		9493C7931EA13D70003944D2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945DF3B41EA0DCA90058DF8D /* MainViewController.xib */; };
-		9493C7941EA13D70003944D2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9493C7881EA134AF003944D2 /* Launch Screen.storyboard */; };
 		9493C79E1EA16423003944D2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493C79D1EA16423003944D2 /* Timer.swift */; };
 		9493C79F1EA16423003944D2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493C79D1EA16423003944D2 /* Timer.swift */; };
 		96857F97CA22A46A2154AF3B /* Pods_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B23C27CD2679206E441D3 /* Pods_appTests.framework */; };
@@ -59,6 +69,12 @@
 		8C335D566685AF1440D9B6BD /* Pods-timerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-timerUITests/Pods-timerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		90F4849005E3407AA4E5A89C /* Pods-timer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timer.release.xcconfig"; path = "Pods/Target Support Files/Pods-timer/Pods-timer.release.xcconfig"; sourceTree = "<group>"; };
 		943B679F1EA229EE00F05CD8 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		943B67A31EA26F8600F05CD8 /* Orbitron-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Black.ttf"; sourceTree = "<group>"; };
+		943B67A41EA26F8600F05CD8 /* Orbitron-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Bold.ttf"; sourceTree = "<group>"; };
+		943B67A51EA26F8600F05CD8 /* Orbitron-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Medium.ttf"; sourceTree = "<group>"; };
+		943B67A61EA26F8600F05CD8 /* Orbitron-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Regular.ttf"; sourceTree = "<group>"; };
+		943B67AF1EA29A9C00F05CD8 /* TimerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerCell.xib; sourceTree = "<group>"; };
+		943B67B21EA2A5EE00F05CD8 /* TimerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		945DF3B31EA0DCA90058DF8D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		945DF3B41EA0DCA90058DF8D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		94887BCE1E9FFCA100077AB8 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +87,6 @@
 		94887BEF1E9FFCA100077AB8 /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94887BF31E9FFCA100077AB8 /* appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appUITests.swift; sourceTree = "<group>"; };
 		94887BF51E9FFCA100077AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9493C7881EA134AF003944D2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9493C79A1EA13D70003944D2 /* appAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9493C79B1EA13D70003944D2 /* app alpha.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "app alpha.plist"; sourceTree = SOURCE_ROOT; };
 		9493C79D1EA16423003944D2 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
@@ -152,11 +167,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		943B67A21EA26F5A00F05CD8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				943B67A31EA26F8600F05CD8 /* Orbitron-Black.ttf */,
+				943B67A41EA26F8600F05CD8 /* Orbitron-Bold.ttf */,
+				943B67A51EA26F8600F05CD8 /* Orbitron-Medium.ttf */,
+				943B67A61EA26F8600F05CD8 /* Orbitron-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		945DF3B21EA0DC890058DF8D /* views */ = {
 			isa = PBXGroup;
 			children = (
 				945DF3B31EA0DCA90058DF8D /* MainViewController.swift */,
 				945DF3B41EA0DCA90058DF8D /* MainViewController.xib */,
+				943B67AF1EA29A9C00F05CD8 /* TimerCell.xib */,
+				943B67B21EA2A5EE00F05CD8 /* TimerCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -164,6 +192,7 @@
 		94887BC51E9FFCA100077AB8 = {
 			isa = PBXGroup;
 			children = (
+				943B67A21EA26F5A00F05CD8 /* Resources */,
 				94887BD01E9FFCA100077AB8 /* app */,
 				94887BE71E9FFCA100077AB8 /* appTests */,
 				94887BF21E9FFCA100077AB8 /* appUITests */,
@@ -193,7 +222,6 @@
 				94887BDA1E9FFCA100077AB8 /* Assets.xcassets */,
 				94887BDF1E9FFCA100077AB8 /* Info.plist */,
 				9493C79B1EA13D70003944D2 /* app alpha.plist */,
-				9493C7881EA134AF003944D2 /* Launch Screen.storyboard */,
 				943B679F1EA229EE00F05CD8 /* Configuration.swift */,
 			);
 			path = app;
@@ -370,7 +398,11 @@
 			files = (
 				94887BDB1E9FFCA100077AB8 /* Assets.xcassets in Resources */,
 				945DF3B61EA0DCA90058DF8D /* MainViewController.xib in Resources */,
-				9493C7891EA134AF003944D2 /* Launch Screen.storyboard in Resources */,
+				943B67AB1EA26F8600F05CD8 /* Orbitron-Medium.ttf in Resources */,
+				943B67A91EA26F8600F05CD8 /* Orbitron-Bold.ttf in Resources */,
+				943B67A71EA26F8600F05CD8 /* Orbitron-Black.ttf in Resources */,
+				943B67B01EA29A9C00F05CD8 /* TimerCell.xib in Resources */,
+				943B67AD1EA26F8600F05CD8 /* Orbitron-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +426,11 @@
 			files = (
 				9493C7921EA13D70003944D2 /* Assets.xcassets in Resources */,
 				9493C7931EA13D70003944D2 /* MainViewController.xib in Resources */,
-				9493C7941EA13D70003944D2 /* Launch Screen.storyboard in Resources */,
+				943B67AC1EA26F8600F05CD8 /* Orbitron-Medium.ttf in Resources */,
+				943B67AA1EA26F8600F05CD8 /* Orbitron-Bold.ttf in Resources */,
+				943B67A81EA26F8600F05CD8 /* Orbitron-Black.ttf in Resources */,
+				943B67B11EA29A9C00F05CD8 /* TimerCell.xib in Resources */,
+				943B67AE1EA26F8600F05CD8 /* Orbitron-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +628,7 @@
 				9493C79E1EA16423003944D2 /* Timer.swift in Sources */,
 				94887BD21E9FFCA100077AB8 /* AppDelegate.swift in Sources */,
 				945DF3B51EA0DCA90058DF8D /* MainViewController.swift in Sources */,
+				943B67B31EA2A5EE00F05CD8 /* TimerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +656,7 @@
 				9493C79F1EA16423003944D2 /* Timer.swift in Sources */,
 				9493C78D1EA13D70003944D2 /* AppDelegate.swift in Sources */,
 				9493C78E1EA13D70003944D2 /* MainViewController.swift in Sources */,
+				943B67B41EA2A5EE00F05CD8 /* TimerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,14 +776,15 @@
 			baseConfigurationReference = C81DE76633D435A2094D14E7 /* Pods-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7FE338P386;
-				INFOPLIST_FILE = timer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.reckoning.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -754,14 +793,15 @@
 			baseConfigurationReference = BB03BC52403B94EACE4F44F5 /* Pods-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7FE338P386;
-				INFOPLIST_FILE = timer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.reckoning.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -832,6 +872,7 @@
 			baseConfigurationReference = EB9F8FF1C36E2DCED6E4944B /* Pods-appAlpha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconAlpha;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7FE338P386;
 				INFOPLIST_FILE = "app alpha.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -839,7 +880,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.reckoning.app.alpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -848,6 +889,7 @@
 			baseConfigurationReference = 1137382149D9A22D596BACC7 /* Pods-appAlpha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconAlpha;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7FE338P386;
 				INFOPLIST_FILE = "app alpha.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -855,7 +897,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.reckoning.app.alpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

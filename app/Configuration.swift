@@ -22,7 +22,7 @@ enum Environment: String {
     var token: String {
         switch self {
         case .Alpha: return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjA3M2JkMjNjLTM4NTEtNGFjOS04ZmI1LWY3MjVjYjIxOWEwNyIsImV4cCI6MTQ5MjMzNTE3OH0.lu12S7WdiURq8UuuwP305RauiPbFoL6BmRuq2GeFKw0"
-        case .Production: return ""
+        case .Production: return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjA3M2JkMjNjLTM4NTEtNGFjOS04ZmI1LWY3MjVjYjIxOWEwNyIsImV4cCI6MTQ5MjM0NzA1N30.v4W1VpzqfPP6Dd-dAYJOj23JbWPWOpINQ4hkzqm4vrA"
         }
     }
 }

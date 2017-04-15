@@ -4,6 +4,7 @@ def pods
   pod 'Alamofire', '~> 4.4'
   pod 'Argo'
   pod 'Curry'
+  pod 'HexColors'
 end
 
 target 'app' do
