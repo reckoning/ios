@@ -21,7 +21,7 @@ DEPENDENCIES:
   - Curry
   - FontAwesome.swift
   - HexColors
-  - HockeySDK
+  - HockeySDK (~> 4.1.4)
 
 SPEC CHECKSUMS:
   1PasswordExtension: e775a29310c65851e5a6cec1afc349ab4e334e47
@@ -34,6 +34,6 @@ SPEC CHECKSUMS:
   HockeySDK: 78a3f8bb9100277b531defc56c970369a3ca267a
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
 
-PODFILE CHECKSUM: fc39e7cb278a10bc624ff359857ca22c32043625
+PODFILE CHECKSUM: 9fdd66edd2e52ca0b1b29411a43f7ba58c91a1e2
 
 COCOAPODS: 1.2.1

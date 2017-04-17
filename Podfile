@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 def pods
   pod 'Alamofire', '~> 4.4'
@@ -8,6 +8,7 @@ def pods
   pod 'HexColors'
   pod 'FontAwesome.swift'
   pod '1PasswordExtension'
+  pod 'HockeySDK', '~> 4.1.4'
 end
 
 target 'app' do
@@ -20,7 +21,6 @@ target 'app' do
     inherit! :search_paths
 
     pods
-    pod 'HockeySDK'
   end
 
   target 'appTests' do
