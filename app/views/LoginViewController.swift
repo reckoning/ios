@@ -11,18 +11,18 @@ import Alamofire
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet var EmailField: UITextField!
-    @IBOutlet var PasswordField: UITextField!
-    @IBOutlet var OTPField: UITextField!
+    @IBOutlet var EmailField: BigTextField!
+    @IBOutlet var PasswordField: BigTextField!
+    @IBOutlet var OTPField: BigTextField!
     @IBOutlet var SubmitButton: PrimaryButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EmailField.placeholder = "E-Mail"
+        EmailField.setPlaceholder(name: "E-Mail")
         EmailField.keyboardType = .emailAddress
-        PasswordField.placeholder = "Passwort"
-        OTPField.placeholder = "Einmal Token (Optional)"
+        PasswordField.setPlaceholder(name: "Passwort")
+        OTPField.setPlaceholder(name: "Einmal Token (Optional)")
         OTPField.keyboardType = .numberPad
         SubmitButton.setTitle("Anmelden", for: .normal)
     }
@@ -59,24 +59,10 @@ class LoginViewController: UIViewController {
                     self.dismiss(animated: true)
                     self.SubmitButton.stopLoading()
                 case .failure(let error):
-                    print(error)
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.showAlert(title: "Login fehlgeschlagen", message: error.localizedDescription)
                     self.SubmitButton.stopLoading()
                 }
         }
     }
-    
-    func finished() {
-        SubmitButton.stopLoading()
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

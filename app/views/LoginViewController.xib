@@ -27,8 +27,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cvw-wK-mgB">
-                    <rect key="frame" x="20" y="218.5" width="335" height="231"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cvw-wK-mgB">
+                    <rect key="frame" x="20" y="228.5" width="335" height="211"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reckoning.io" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8w-bR-WE0">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -37,25 +37,25 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-15-6rE" customClass="BigTextField" customModule="app" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="50" width="335" height="29"/>
+                            <rect key="frame" x="0.0" y="45" width="335" height="29"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vuu-px-wjd" customClass="BigTextField" customModule="app" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="99" width="335" height="29"/>
+                            <rect key="frame" x="0.0" y="89" width="335" height="29"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PFC-4u-zSg" customClass="BigTextField" customModule="app" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="148" width="335" height="29"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PFC-4u-zSg" customClass="BigTextField" customModule="app" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="133" width="335" height="29"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSx-GJ-r8c" customClass="PrimaryButton" customModule="app" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="197" width="335" height="34"/>
+                            <rect key="frame" x="0.0" y="177" width="335" height="34"/>
                             <color key="backgroundColor" red="0.25882352941176467" green="0.54509803921568623" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="submit:" destination="-1" eventType="touchUpInside" id="mHf-92-4OE"/>

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Argo
+import FontAwesome_swift
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var timerLabel: UILabel!
@@ -26,7 +27,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        load()
         
         let primaryColor = UIColor(red:0.259,  green:0.545,  blue:0.792, alpha:1)
         let grayColor = UIColor(red:0.200,  green:0.200,  blue:0.200, alpha:1)
@@ -36,14 +36,19 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             target: self,
             action: #selector(self.add)
         )
+        
         addTimerButton.tintColor = primaryColor
         self.navigationItem.rightBarButtonItem  = addTimerButton
         
         let logoutButton = UIBarButtonItem(
-            barButtonSystemItem: .cancel,
+            title: "",
+            style: .plain,
             target: self,
             action: #selector(self.logout)
         )
+        let logoutButtonAttributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
+        logoutButton.setTitleTextAttributes(logoutButtonAttributes, for: .normal)
+        logoutButton.title = String.fontAwesomeIcon(name: .signOut)
         logoutButton.tintColor = primaryColor
         self.navigationItem.leftBarButtonItem = logoutButton
         self.navigationController?.navigationBar.titleTextAttributes =
@@ -56,6 +61,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         timerList.addSubview(self.refreshControl)
         
         title = "Timers"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if appDelegate.isAuthenticated() {
+            load()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -149,7 +161,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.timerList.reloadData()
                     self.refreshControl.endRefreshing()
                 case .failure(let error):
-                    print(error)
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.showAlert(title: "Anfrage fehlgeschlagen", message: error.localizedDescription)
                     self.refreshControl.endRefreshing()
                 }
         }
@@ -163,29 +176,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func logout() {
-        var configuration = Configuration()
-        let authToken = UserDefaults.standard.value(forKey: "authToken") as? NSString
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \"\(authToken ?? "")\"",
-            "Accept": "application/json"
-        ]
-        Alamofire.request(
-            "\(configuration.environment.baseURL)/sessions",
-            method: .delete,
-            headers: headers
-            )
-            .validate(statusCode: 200..<500)
-            .responseJSON { response in
-                switch response.result {
-                case .success:
-                    UserDefaults.standard.removeObject(forKey: "authToken")
-                    UserDefaults.standard.synchronize()
-                    let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-                    self.navigationController?.present(loginViewController, animated: true)
-                case .failure(let error):
-                    print(error)
-                }
-        }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.logout()
+        timers = []
+        timerList.reloadData()
     }
 
     func timeText(from number: Int) -> String {

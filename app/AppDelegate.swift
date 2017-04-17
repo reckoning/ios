@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -20,17 +21,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainViewController = MainViewController(nibName: "MainViewController", bundle: nil)
         let navController = UINavigationController(rootViewController: mainViewController)
         
-        window?.rootViewController = navController
         window?.makeKeyAndVisible()
+        window?.rootViewController = navController
         
-        if ((UserDefaults.standard.value(forKey: "authToken") as? NSString) == nil) {
-            let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-            navController.present(loginViewController, animated: false)
+        if !isAuthenticated() {
+            showLogin(animated: false)
         }
+        
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+        NetworkActivityIndicatorManager.shared.startDelay = 0.2
+        NetworkActivityIndicatorManager.shared.completionDelay = 1.0
         
         return true
     }
-
+    
+    func isAuthenticated() -> Bool {
+        return (UserDefaults.standard.value(forKey: "authToken") as? NSString) != nil
+    }
+    
+    func showLogin(animated: Bool) {
+        let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        window?.rootViewController?.present(loginViewController, animated: animated)
+    }
+    
+    func logout() {
+        var configuration = Configuration()
+        let authToken = UserDefaults.standard.value(forKey: "authToken") as? NSString
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \"\(authToken ?? "")\"",
+            "Accept": "application/json"
+        ]
+        Alamofire.request(
+            "\(configuration.environment.baseURL)/sessions",
+            method: .delete,
+            headers: headers
+            )
+            .validate(statusCode: 200..<500)
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    UserDefaults.standard.removeObject(forKey: "authToken")
+                    UserDefaults.standard.synchronize()
+                    self.showLogin(animated: true)
+                case .failure(let error):
+                    self.showAlert(title: "Logout fehlgeschlagen", message: error.localizedDescription)
+                }
+        }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+        self.window?.rootViewController?.presentedViewController?.present(alert, animated: true, completion: nil)
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

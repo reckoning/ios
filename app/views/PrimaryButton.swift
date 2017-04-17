@@ -19,7 +19,7 @@ class PrimaryButton: UIButton {
     var isLoading: Bool = false
     
     override func draw(_ rect: CGRect) {
-        addConstraint(NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50))
+        addConstraint(NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 46))
         
         layer.cornerRadius = 6
         layer.borderWidth = 1
@@ -31,10 +31,11 @@ class PrimaryButton: UIButton {
         adjustsImageWhenDisabled = false
         adjustsImageWhenHighlighted = false
         
-        titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        titleLabel?.font = UIFont(name: "HelveticaNeue", size: 18)
         
         clipsToBounds = true
         backgroundColor = buttonBackgroundColor
+        layer.borderColor = borderColor.cgColor
     }
     
     func startLoading() {
