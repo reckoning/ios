@@ -1,0 +1,18 @@
+# frozen_string_literal: true
+default_platform :ios
+
+lane :alpha do
+  cocoapods
+
+  increment_build_number
+
+  gym(
+    scheme: "appAlpha",
+    export_method: "ad-hoc"
+  )
+
+  hockey(
+    api_token: "987e5083529f4b9cb7288eb370247dd0",
+    public_identifier: "fe70b029361b4507bcaf43d56931657b"
+  )
+end
