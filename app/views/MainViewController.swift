@@ -17,6 +17,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var runningTimer: IndexPath!
     var timers: Array<Timer> = []
 
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(MainViewController.load), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         load()
@@ -27,24 +34,26 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let addTimerButton = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
-            action: #selector(MainViewController.add)
+            action: #selector(self.add)
         )
         addTimerButton.tintColor = primaryColor
         self.navigationItem.rightBarButtonItem  = addTimerButton
         
-        let reloadButton = UIBarButtonItem(
-            barButtonSystemItem: .refresh,
+        let logoutButton = UIBarButtonItem(
+            barButtonSystemItem: .cancel,
             target: self,
-            action: #selector(MainViewController.load)
+            action: #selector(self.logout)
         )
-        reloadButton.tintColor = primaryColor
-        self.navigationItem.leftBarButtonItem = reloadButton
+        logoutButton.tintColor = primaryColor
+        self.navigationItem.leftBarButtonItem = logoutButton
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSForegroundColorAttributeName: grayColor,
              NSFontAttributeName: UIFont(name: "Orbitron-Regular", size: 21)!]
         
         timerList.dataSource = self
         timerList.delegate = self
+        
+        timerList.addSubview(self.refreshControl)
         
         title = "Timers"
     }
@@ -77,7 +86,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if (self.interval != nil) {
                 self.interval.invalidate()
             }
-            self.interval = Foundation.Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainViewController.update), userInfo: nil, repeats: true)
+            self.interval = Foundation.Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
             cell.runningIndicator.startAnimating()
         } else {
             cell.runningIndicator.stopAnimating()
@@ -112,9 +121,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func load() {
         var configuration = Configuration()
-        
+        let authToken = UserDefaults.standard.value(forKey: "authToken") as? NSString
         let headers: HTTPHeaders = [
-            "Authorization": "Token token=\"\(configuration.environment.token)\"",
+            "Authorization": "Bearer \"\(authToken ?? "")\"",
             "Accept": "application/json"
         ]
         let parameters: Parameters = ["limit": 20]
@@ -138,8 +147,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         self.runningTimer = nil
                     }
                     self.timerList.reloadData()
+                    self.refreshControl.endRefreshing()
                 case .failure(let error):
                     print(error)
+                    self.refreshControl.endRefreshing()
                 }
         }
     }
@@ -149,6 +160,32 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let powerOfTen:Double = pow(10.0, numberOfPlaces)
         let minutes = (hours.truncatingRemainder(dividingBy: 1) * powerOfTen) / powerOfTen
         return "\(Int(hours)):\(timeText(from: Int(minutes * 60)))"
+    }
+    
+    func logout() {
+        var configuration = Configuration()
+        let authToken = UserDefaults.standard.value(forKey: "authToken") as? NSString
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \"\(authToken ?? "")\"",
+            "Accept": "application/json"
+        ]
+        Alamofire.request(
+            "\(configuration.environment.baseURL)/sessions",
+            method: .delete,
+            headers: headers
+            )
+            .validate(statusCode: 200..<500)
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    UserDefaults.standard.removeObject(forKey: "authToken")
+                    UserDefaults.standard.synchronize()
+                    let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+                    self.navigationController?.present(loginViewController, animated: true)
+                case .failure(let error):
+                    print(error)
+                }
+        }
     }
 
     func timeText(from number: Int) -> String {
