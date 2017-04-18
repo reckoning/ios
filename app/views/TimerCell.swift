@@ -9,9 +9,9 @@
 import UIKit
 
 class TimerCell: UITableViewCell {
-    @IBOutlet var runningIndicator: UIActivityIndicatorView!
-    @IBOutlet var title: UILabel!
-    @IBOutlet var customer: UILabel!
-    @IBOutlet var subTitle: UILabel!
-    @IBOutlet var hours: UILabel!
+  @IBOutlet var runningIndicator: UIActivityIndicatorView!
+  @IBOutlet var title: UILabel!
+  @IBOutlet var customer: UILabel!
+  @IBOutlet var subTitle: UILabel!
+  @IBOutlet var hours: UILabel!
 }

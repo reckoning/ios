@@ -34,8 +34,8 @@ class LoginViewController: UIViewController {
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
     }
   
     @IBAction func findLoginFrom1Password(_ sender: UIButton) {
@@ -51,36 +51,36 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func submit(_ sender: UIButton) {
-        SubmitButton.startLoading()
-        var configuration = Configuration()
+      SubmitButton.startLoading()
+      var configuration = Configuration()
 
-        let headers: HTTPHeaders = [
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        ]
-        let parameters: Parameters = ["email": EmailField.text ?? "", "password": PasswordField.text ?? "", "otp_token": OTPField.text ?? ""]
-        Alamofire.request(
-            "\(configuration.environment.baseURL)/sessions",
-            method: .post,
-            parameters: parameters,
-            encoding: JSONEncoding.default,
-            headers: headers
-        )
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                switch response.result {
-                case .success:
-                    let json = response.result.value as? [String: Any]
-                    let authToken = json?["auth_token"] as? String
-                    UserDefaults.standard.setValue(authToken, forKey: "authToken")
-                    UserDefaults.standard.synchronize()
-                    self.dismiss(animated: true)
-                    self.SubmitButton.stopLoading()
-                case .failure(let error):
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.showAlert(title: "Login fehlgeschlagen", message: error.localizedDescription)
-                    self.SubmitButton.stopLoading()
-                }
+      let headers: HTTPHeaders = [
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      ]
+      let parameters: Parameters = ["email": EmailField.text ?? "", "password": PasswordField.text ?? "", "otp_token": OTPField.text ?? ""]
+      Alamofire.request(
+        "\(configuration.environment.baseURL)/sessions",
+        method: .post,
+        parameters: parameters,
+        encoding: JSONEncoding.default,
+        headers: headers
+      )
+        .validate(statusCode: 200..<300)
+        .responseJSON { response in
+          switch response.result {
+            case .success:
+              let json = response.result.value as? [String: Any]
+              let authToken = json?["auth_token"] as? String
+              UserDefaults.standard.setValue(authToken, forKey: "authToken")
+              UserDefaults.standard.synchronize()
+              self.dismiss(animated: true)
+              self.SubmitButton.stopLoading()
+            case .failure(let error):
+              let appDelegate = UIApplication.shared.delegate as! AppDelegate
+              appDelegate.showAlert(title: "Login fehlgeschlagen", message: error.localizedDescription)
+              self.SubmitButton.stopLoading()
+          }
         }
     }
 }
