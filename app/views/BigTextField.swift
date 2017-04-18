@@ -21,7 +21,7 @@ class BigTextField: UITextField {
         textColor = color
         layer.borderColor = borderColor.cgColor
         font = UIFont.systemFont(ofSize: 16)
-        clearButtonMode = .always
+        clearButtonMode = .whileEditing
     }
     
     func setPlaceholder(name: String) {
