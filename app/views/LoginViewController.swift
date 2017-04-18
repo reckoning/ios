@@ -19,18 +19,18 @@ class LoginViewController: UIViewController {
     @IBOutlet var OnePasswordButton: UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
 
-        EmailField.setPlaceholder(name: "E-Mail")
-        EmailField.keyboardType = .emailAddress
-        PasswordField.setPlaceholder(name: "Passwort")
-        OTPField.setPlaceholder(name: "Einmal-Token (Optional)")
-        OTPField.keyboardType = .numberPad
-        SubmitButton.setTitle("Anmelden", for: .normal)
+      EmailField.setPlaceholder(name: "E-Mail")
+      EmailField.keyboardType = .emailAddress
+      PasswordField.setPlaceholder(name: "Passwort")
+      OTPField.setPlaceholder(name: "Einmal-Token (Optional)")
+      OTPField.keyboardType = .numberPad
+      SubmitButton.setTitle("Anmelden", for: .normal)
       
-        let onePasswordImage = UIImage(named: "onePassword")
-        OnePasswordButton.setBackgroundImage(onePasswordImage, for: .normal)
-//        OnePasswordButton.isHidden = !OnePasswordExtension.shared().isAppExtensionAvailable()
+      let onePasswordImage = UIImage(named: "onePassword")
+      OnePasswordButton.setBackgroundImage(onePasswordImage, for: .normal)
+      OnePasswordButton.isHidden = !OnePasswordExtension.shared().isAppExtensionAvailable()
     }
 
     override func didReceiveMemoryWarning() {
