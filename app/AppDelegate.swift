@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = navController
 
     if !isAuthenticated() {
-      showLogin(animated: false)
+      showLogin(animated: false, onFinish: nil)
     }
 
     NetworkActivityIndicatorManager.shared.isEnabled = true
@@ -43,34 +43,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return (UserDefaults.standard.value(forKey: "authToken") as? NSString) != nil
   }
 
-  func showLogin(animated: Bool) {
+  func showLogin(animated: Bool, onFinish: (() -> Void)?) {
+    UserDefaults.standard.removeObject(forKey: "authToken")
+    UserDefaults.standard.synchronize()
     let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-    window?.rootViewController?.present(loginViewController, animated: animated)
+    window?.rootViewController?.present(loginViewController, animated: animated, completion: onFinish)
   }
 
-  func logout() {
-    var configuration = Configuration()
-    let authToken = UserDefaults.standard.value(forKey: "authToken") as? NSString
-    let headers: HTTPHeaders = [
-      "Authorization": "Bearer \"\(authToken ?? "")\"",
-      "Accept": "application/json"
-    ]
-    Alamofire.request(
-      "\(configuration.environment.baseURL)/sessions",
-      method: .delete,
-      headers: headers
-    )
-      .validate(statusCode: 200..<500)
-      .responseJSON { response in
-        switch response.result {
-          case .success:
-            UserDefaults.standard.removeObject(forKey: "authToken")
-            UserDefaults.standard.synchronize()
-            self.showLogin(animated: true)
-          case .failure(let error):
-            self.showAlert(title: "Logout fehlgeschlagen", message: error.localizedDescription)
-        }
-      }
+  func logout(onFinish: (() -> Void)?) {
+    ApiClient().delete(path: "/sessions", onFinish: { _ in
+      self.showLogin(animated: true, onFinish: onFinish)
+    }, onFail: { _ in
+      self.showLogin(animated: true, onFinish: onFinish)
+    })
   }
 
   func showAlert(title: String, message: String) {
@@ -79,14 +64,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window?.rootViewController?.presentedViewController?.present(alert, animated: true, completion: nil)
   }
 
-  func confirmAlert(topic: String, completion: @escaping () -> Void) {
+  func confirmAlert(topic: String, onConfirm: (() -> Void)?, onCancel: (() -> Void)?) {
     let confirmationAlert = UIAlertController(title: topic, message: "Sind Sie sich sicher?", preferredStyle: .alert)
     
     confirmationAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
-      completion()
+      if (onConfirm != nil) {
+        onConfirm!()
+      }
     }))
     
-    confirmationAlert.addAction(UIAlertAction(title: "Abbrechen", style: .cancel, handler: nil))
+    confirmationAlert.addAction(UIAlertAction(title: "Abbrechen", style: .cancel, handler: { (action: UIAlertAction!) in
+      if (onCancel != nil) {
+        onCancel!()
+      }
+    }))
     
     self.window?.rootViewController?.present(confirmationAlert, animated: true, completion: nil)
   }

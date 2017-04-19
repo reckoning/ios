@@ -5,7 +5,7 @@ lane :alpha do
   cocoapods
 
   increment_build_number
-  
+
   gym(
     scheme: "appAlpha",
     export_method: "ad-hoc"

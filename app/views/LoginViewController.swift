@@ -53,7 +53,6 @@ class LoginViewController: UIViewController {
     @IBAction func submit(_ sender: UIButton) {
       SubmitButton.startLoading()
       var configuration = Configuration()
-
       let headers: HTTPHeaders = [
         "Accept": "application/json",
         "Content-Type": "application/json"

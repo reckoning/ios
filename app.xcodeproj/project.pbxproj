@@ -42,6 +42,8 @@
 		9493C7931EA13D70003944D2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945DF3B41EA0DCA90058DF8D /* MainViewController.xib */; };
 		9493C79E1EA16423003944D2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493C79D1EA16423003944D2 /* Timer.swift */; };
 		9493C79F1EA16423003944D2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493C79D1EA16423003944D2 /* Timer.swift */; };
+		94BE729C1EA8074B002D1528 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE729B1EA8074B002D1528 /* ApiClient.swift */; };
+		94BE729D1EA8074B002D1528 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE729B1EA8074B002D1528 /* ApiClient.swift */; };
 		96857F97CA22A46A2154AF3B /* Pods_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B23C27CD2679206E441D3 /* Pods_appTests.framework */; };
 		D977BDD264AD5D77DC34AD16 /* Pods_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5AA41F09ED2BE531D520A7 /* Pods_appUITests.framework */; };
 		F28A56B771B6A9866DBA0838 /* Pods_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E145176F0AA98BF3BE59E7 /* Pods_app.framework */; };
@@ -101,6 +103,7 @@
 		94887BF51E9FFCA100077AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9493C79A1EA13D70003944D2 /* appAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9493C79D1EA16423003944D2 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		94BE729B1EA8074B002D1528 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		B7FFD8DE5BD64BDE5AA9BDDF /* Pods-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appUITests/Pods-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB03BC52403B94EACE4F44F5 /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
 		C5E145176F0AA98BF3BE59E7 /* Pods_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +237,7 @@
 		94887BD01E9FFCA100077AB8 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				94BE729A1EA8072C002D1528 /* helpers */,
 				9493C79C1EA162E4003944D2 /* models */,
 				945DF3B21EA0DC890058DF8D /* views */,
 				94887BD11E9FFCA100077AB8 /* AppDelegate.swift */,
@@ -267,6 +271,14 @@
 				9493C79D1EA16423003944D2 /* Timer.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		94BE729A1EA8072C002D1528 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				94BE729B1EA8074B002D1528 /* ApiClient.swift */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -644,6 +656,7 @@
 			files = (
 				941FFD201EA3655900895E79 /* BigTextField.swift in Sources */,
 				941FFD1D1EA3632100895E79 /* PrimaryButton.swift in Sources */,
+				94BE729C1EA8074B002D1528 /* ApiClient.swift in Sources */,
 				947C81B41EA2D556005F791B /* LoginViewController.swift in Sources */,
 				943B67A01EA229EE00F05CD8 /* Configuration.swift in Sources */,
 				9493C79E1EA16423003944D2 /* Timer.swift in Sources */,
@@ -675,6 +688,7 @@
 			files = (
 				941FFD211EA3655900895E79 /* BigTextField.swift in Sources */,
 				941FFD1E1EA3632100895E79 /* PrimaryButton.swift in Sources */,
+				94BE729D1EA8074B002D1528 /* ApiClient.swift in Sources */,
 				947C81B51EA2D556005F791B /* LoginViewController.swift in Sources */,
 				943B67A11EA229EE00F05CD8 /* Configuration.swift in Sources */,
 				9493C79F1EA16423003944D2 /* Timer.swift in Sources */,
