@@ -100,7 +100,6 @@
 		94887BF31E9FFCA100077AB8 /* appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appUITests.swift; sourceTree = "<group>"; };
 		94887BF51E9FFCA100077AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9493C79A1EA13D70003944D2 /* appAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9493C79B1EA13D70003944D2 /* app alpha.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "app alpha.plist"; path = "app/app alpha.plist"; sourceTree = SOURCE_ROOT; };
 		9493C79D1EA16423003944D2 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		B7FFD8DE5BD64BDE5AA9BDDF /* Pods-appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appUITests/Pods-appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB03BC52403B94EACE4F44F5 /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +207,7 @@
 		94887BC51E9FFCA100077AB8 = {
 			isa = PBXGroup;
 			children = (
+				94887BDF1E9FFCA100077AB8 /* Info.plist */,
 				943B67A21EA26F5A00F05CD8 /* Resources */,
 				94887BD01E9FFCA100077AB8 /* app */,
 				94887BE71E9FFCA100077AB8 /* appTests */,
@@ -238,8 +238,6 @@
 				945DF3B21EA0DC890058DF8D /* views */,
 				94887BD11E9FFCA100077AB8 /* AppDelegate.swift */,
 				94887BDA1E9FFCA100077AB8 /* Assets.xcassets */,
-				94887BDF1E9FFCA100077AB8 /* Info.plist */,
-				9493C79B1EA13D70003944D2 /* app alpha.plist */,
 				943B679F1EA229EE00F05CD8 /* Configuration.swift */,
 			);
 			path = app;
@@ -805,7 +803,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 7FE338P386;
-				INFOPLIST_FILE = "$(SRCROOT)/app/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.reckoning.app;
@@ -824,7 +822,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 7FE338P386;
-				INFOPLIST_FILE = "$(SRCROOT)/app/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.reckoning.app;
@@ -905,7 +903,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 7FE338P386;
-				INFOPLIST_FILE = "$(SRCROOT)/app/app alpha.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -970,7 +968,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 7FE338P386;
-				INFOPLIST_FILE = "$(SRCROOT)/app/app alpha.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
