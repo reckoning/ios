@@ -17,6 +17,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
   var interval: Foundation.Timer!
   var runningTimer: IndexPath!
   var timers: Array<Timer> = []
+  let primaryColor = UIColor(red:0.259,  green:0.545,  blue:0.792, alpha:1)
 
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
@@ -28,17 +29,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let primaryColor = UIColor(red:0.259,  green:0.545,  blue:0.792, alpha:1)
     let grayColor = UIColor(red:0.200,  green:0.200,  blue:0.200, alpha:1)
 
-    let addTimerButton = UIBarButtonItem(
-      barButtonSystemItem: .add,
-      target: self,
-      action: #selector(self.add)
-    )
-
-    addTimerButton.tintColor = primaryColor
-    self.navigationItem.rightBarButtonItem  = addTimerButton
+    timerList.allowsSelection = false
 
     let logoutButton = UIBarButtonItem(
       title: "",
@@ -119,17 +112,49 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     return cell
   }
 
+
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 75.0;
   }
 
-  //MARK: Actions
-
-  func add() {
-    let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
-    alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
-    self.present(alert, animated: true, completion: nil)
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
   }
+
+  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    let timer = timers[indexPath.row]
+    var action = UITableViewRowAction(
+      style: .normal,
+      title: "Start"
+    ) { action, index in
+      print("call api")
+      self.timerList.setEditing(false, animated: true)
+      self.timerList.reloadRows(at: [indexPath], with: .none)
+    }
+    action.backgroundColor = primaryColor
+    if timer.startedAt != nil {
+      action = UITableViewRowAction(
+        style: .normal,
+        title: "Stop"
+      ) { action, index in
+        print("call api")
+        self.timerList.setEditing(false, animated: true)
+        self.timerList.reloadRows(at: [indexPath], with: .none)
+      }
+      action.backgroundColor = UIColor.white
+    }
+    let delete = UITableViewRowAction(style: .default, title: "Löschen") { action, index in
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
+      appDelegate.confirmAlert(title: "Timer Löschen", message: "Sind Sie sich sicher?", completion: {
+        print("call api to delete the timer")
+        self.timers.remove(at: indexPath.row)
+        self.timerList.deleteRows(at: [indexPath], with: .automatic)
+      })
+    }
+    return [action, delete]
+  }
+
+  //MARK: Actions
 
   func load() {
     var configuration = Configuration()
@@ -177,9 +202,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
   func logout() {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    appDelegate.logout()
-    timers = []
-    timerList.reloadData()
+    appDelegate.confirmAlert(title: "Bitte bestätigen", message: "Wollen Sie sich wirklich abmelden?", completion: {
+      appDelegate.logout()
+      self.timers = []
+      self.timerList.reloadData()
+    })
   }
 
   func timeText(from number: Int) -> String {

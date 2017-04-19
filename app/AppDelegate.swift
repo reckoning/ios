@@ -74,9 +74,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func showAlert(title: String, message: String) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-    alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.default, handler: nil))
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
     self.window?.rootViewController?.presentedViewController?.present(alert, animated: true, completion: nil)
+  }
+
+  func confirmAlert(title: String, message: String, completion: @escaping () -> Void) {
+    let confirmationAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+    confirmationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+      completion()
+    }))
+    
+    confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    
+    self.window?.rootViewController?.present(confirmationAlert, animated: true, completion: nil)
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
