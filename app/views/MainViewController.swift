@@ -145,7 +145,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     let delete = UITableViewRowAction(style: .default, title: "Löschen") { action, index in
       let appDelegate = UIApplication.shared.delegate as! AppDelegate
-      appDelegate.confirmAlert(title: "Timer Löschen", message: "Sind Sie sich sicher?", completion: {
+      appDelegate.confirmAlert(topic: "Timer löschen", completion: {
         print("call api to delete the timer")
         self.timers.remove(at: indexPath.row)
         self.timerList.deleteRows(at: [indexPath], with: .automatic)
@@ -202,7 +202,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
   func logout() {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    appDelegate.confirmAlert(title: "Bitte bestätigen", message: "Wollen Sie sich wirklich abmelden?", completion: {
+    appDelegate.confirmAlert(topic: "Abmelden", completion: {
       appDelegate.logout()
       self.timers = []
       self.timerList.reloadData()

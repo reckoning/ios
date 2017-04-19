@@ -79,14 +79,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window?.rootViewController?.presentedViewController?.present(alert, animated: true, completion: nil)
   }
 
-  func confirmAlert(title: String, message: String, completion: @escaping () -> Void) {
-    let confirmationAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+  func confirmAlert(topic: String, completion: @escaping () -> Void) {
+    let confirmationAlert = UIAlertController(title: topic, message: "Sind Sie sich sicher?", preferredStyle: .alert)
     
-    confirmationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+    confirmationAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
       completion()
     }))
     
-    confirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    confirmationAlert.addAction(UIAlertAction(title: "Abbrechen", style: .cancel, handler: nil))
     
     self.window?.rootViewController?.present(confirmationAlert, animated: true, completion: nil)
   }
