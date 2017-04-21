@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class MenuViewController: UIViewController {
   var user: User!
-  
-  @IBOutlet var nameLabel: UILabel!
+
+  @IBOutlet var profileCell: UIView!
+  @IBOutlet var profileImage: ProfileImage!
   @IBOutlet var emailLabel: UILabel!
+  @IBOutlet var logoutButton: MenuButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
   }
   
   override func viewDidAppear(_ animated: Bool) {
+    let bottomBorder = UIView(frame: CGRect(x:0, y:89, width:profileCell.frame.size.width, height:1))
+    bottomBorder.backgroundColor = Colors.buttonBorder
+    profileCell.addSubview(bottomBorder)
+    
+    logoutButton.setTitle("Abmelden", for: .normal)
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     if appDelegate.isAuthenticated() {
       loadUser()
@@ -38,6 +48,7 @@ class MenuViewController: UIViewController {
       self.closeLeft()  
       appDelegate.logout(onFinish: {
         self.user = nil
+        self.profileImage.image = nil
       })
     }, onCancel: nil)
   }
@@ -47,8 +58,10 @@ class MenuViewController: UIViewController {
   func loadUser() {
     User.current(onFinish: { (user) in
       self.user = user
-      self.nameLabel.text = user.name
       self.emailLabel.text = user.email
+      if (user.avatar != nil) {
+        self.profileImage.setImage(image: user.avatar)
+      }
     }, onFail: { (error) in
       print(error)
     })

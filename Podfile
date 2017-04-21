@@ -3,6 +3,7 @@ platform :ios, '10.0'
 def pods
   pod 'Alamofire', '~> 4.4'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.0'
+  pod 'AlamofireImage'
   pod 'Argo'
   pod 'Curry'
   pod 'HexColors'

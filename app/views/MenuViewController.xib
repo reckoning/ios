@@ -8,11 +8,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Orbitron-Regular.ttf">
+            <string>Orbitron-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="app" customModuleProvider="target">
             <connections>
                 <outlet property="emailLabel" destination="frz-Jm-v10" id="2IV-yO-Nrt"/>
-                <outlet property="nameLabel" destination="z3w-SL-Pd6" id="Tch-GZ-kGz"/>
+                <outlet property="logoutButton" destination="G2O-Wv-xlS" id="em8-EC-LXJ"/>
+                <outlet property="profileCell" destination="s9u-Ko-k9R" id="3xF-wI-6L6"/>
+                <outlet property="profileImage" destination="4pf-rX-oaM" id="5Oq-VD-B9f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,55 +29,65 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pPQ-K2-GNF">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="124"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9u-Ko-k9R">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3w-SL-Pd6">
-                                    <rect key="frame" x="10" y="10" width="355" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reckoning.io" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAe-Yh-bec">
+                                    <rect key="frame" x="10" y="0.0" width="355" height="25"/>
+                                    <fontDescription key="fontDescription" name="Orbitron-Regular" family="Orbitron" pointSize="20"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4pf-rX-oaM" customClass="ProfileImage" customModule="app" customModuleProvider="target">
+                                    <rect key="frame" x="10" y="45" width="35" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="D0t-1i-aG2"/>
+                                        <constraint firstAttribute="width" constant="35" id="EtZ-JK-ujG"/>
+                                    </constraints>
+                                    <string key="image">http://www.gravatar.com/avatar/d33a547ff721b9009dec8d8472ca3d81?s=24&amp;d=https%3A%2F%2Fidenticons.github.com%2Fd33a547ff721b9009dec8d8472ca3d81.png&amp;amp;r=x&amp;amp;s=24</string>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frz-Jm-v10">
-                                    <rect key="frame" x="10" y="35.5" width="355" height="20.5"/>
+                                    <rect key="frame" x="55" y="52.5" width="310" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="z3w-SL-Pd6" firstAttribute="leading" secondItem="s9u-Ko-k9R" secondAttribute="leading" constant="10" id="Aun-Rb-kRI"/>
-                                <constraint firstAttribute="trailing" secondItem="z3w-SL-Pd6" secondAttribute="trailing" constant="10" id="TSz-fz-o1G"/>
-                                <constraint firstItem="frz-Jm-v10" firstAttribute="top" secondItem="z3w-SL-Pd6" secondAttribute="bottom" constant="5" id="UKd-Xp-3Od"/>
-                                <constraint firstItem="frz-Jm-v10" firstAttribute="leading" secondItem="s9u-Ko-k9R" secondAttribute="leading" constant="10" id="Wub-Lk-53f"/>
-                                <constraint firstItem="z3w-SL-Pd6" firstAttribute="top" secondItem="s9u-Ko-k9R" secondAttribute="top" constant="10" id="b11-3g-BTp"/>
-                                <constraint firstAttribute="trailing" secondItem="frz-Jm-v10" secondAttribute="trailing" constant="10" id="egL-Vg-G1Z"/>
-                                <constraint firstAttribute="height" constant="100" id="xBq-T0-7zf"/>
+                                <constraint firstAttribute="trailing" secondItem="AAe-Yh-bec" secondAttribute="trailing" constant="10" id="5pm-Hr-SUd"/>
+                                <constraint firstAttribute="trailing" secondItem="frz-Jm-v10" secondAttribute="trailing" constant="10" id="Ey2-xU-3ah"/>
+                                <constraint firstItem="AAe-Yh-bec" firstAttribute="top" secondItem="s9u-Ko-k9R" secondAttribute="top" id="GGC-oY-ycJ"/>
+                                <constraint firstItem="4pf-rX-oaM" firstAttribute="leading" secondItem="s9u-Ko-k9R" secondAttribute="leading" constant="10" id="Hbi-zk-Smf"/>
+                                <constraint firstItem="AAe-Yh-bec" firstAttribute="leading" secondItem="s9u-Ko-k9R" secondAttribute="leading" constant="10" id="S21-Kg-HlN"/>
+                                <constraint firstItem="frz-Jm-v10" firstAttribute="centerY" secondItem="4pf-rX-oaM" secondAttribute="centerY" id="T4O-4t-oU6"/>
+                                <constraint firstAttribute="bottom" secondItem="4pf-rX-oaM" secondAttribute="bottom" constant="10" id="XiO-Qy-wjG"/>
+                                <constraint firstAttribute="height" constant="90" id="e3q-bM-xUH"/>
+                                <constraint firstItem="4pf-rX-oaM" firstAttribute="top" secondItem="AAe-Yh-bec" secondAttribute="bottom" constant="20" id="veR-zk-VMU"/>
+                                <constraint firstItem="frz-Jm-v10" firstAttribute="leading" secondItem="4pf-rX-oaM" secondAttribute="trailing" constant="10" id="wTg-LY-qgN"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2O-Wv-xlS">
-                            <rect key="frame" x="0.0" y="100" width="375" height="30"/>
-                            <state key="normal" title="Button"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2O-Wv-xlS" customClass="MenuButton" customModule="app" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="90" width="375" height="34"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                             <connections>
                                 <action selector="logout:" destination="-1" eventType="touchUpInside" id="ZM0-fr-wUq"/>
                             </connections>
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="s9u-Ko-k9R" firstAttribute="leading" secondItem="pPQ-K2-GNF" secondAttribute="leading" id="4qy-HB-RGX"/>
-                        <constraint firstItem="s9u-Ko-k9R" firstAttribute="top" secondItem="pPQ-K2-GNF" secondAttribute="top" id="Sv8-i5-FAE"/>
-                        <constraint firstAttribute="trailing" secondItem="s9u-Ko-k9R" secondAttribute="trailing" id="cs4-M0-ekO"/>
+                        <constraint firstItem="G2O-Wv-xlS" firstAttribute="leading" secondItem="pPQ-K2-GNF" secondAttribute="leading" id="UzD-7H-KpT"/>
+                        <constraint firstAttribute="trailing" secondItem="G2O-Wv-xlS" secondAttribute="trailing" id="cdl-ha-E3c"/>
+                        <constraint firstItem="s9u-Ko-k9R" firstAttribute="top" secondItem="pPQ-K2-GNF" secondAttribute="top" id="ziy-gb-8HU"/>
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="pPQ-K2-GNF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7XZ-cc-rBl"/>
-                <constraint firstAttribute="trailing" secondItem="pPQ-K2-GNF" secondAttribute="trailing" id="c7m-f5-M7n"/>
-                <constraint firstItem="pPQ-K2-GNF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gIh-Yq-RkT"/>
+                <constraint firstItem="pPQ-K2-GNF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="0hA-6M-xEZ"/>
+                <constraint firstItem="pPQ-K2-GNF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JGH-WY-Q98"/>
+                <constraint firstAttribute="trailing" secondItem="pPQ-K2-GNF" secondAttribute="trailing" id="UgO-wB-Ugt"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -79,4 +96,9 @@
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image width="16" height="16">
+            <string key="name">http://www.gravatar.com/avatar/d33a547ff721b9009dec8d8472ca3d81?s=24&amp;d=https%3A%2F%2Fidenticons.github.com%2Fd33a547ff721b9009dec8d8472ca3d81.png&amp;amp;r=x&amp;amp;s=24</string>
+        </image>
+    </resources>
 </document>

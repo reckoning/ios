@@ -15,6 +15,7 @@ struct User {
   let id: String
   let email: String
   let name: String
+  let avatar: String
   let createdAt: String
   let updatedAt: String
   
@@ -31,6 +32,7 @@ extension User: Decodable {
       <^> j <| "id"
       <*> j <| "email"
       <*> j <| "name"
+      <*> j <| "avatar"
       <*> j <| "createdAt"
       <*> j <| "updatedAt"
   }

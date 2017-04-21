@@ -36,6 +36,14 @@
 		943B67B41EA2A5EE00F05CD8 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943B67B21EA2A5EE00F05CD8 /* TimerCell.swift */; };
 		945DF3B51EA0DCA90058DF8D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945DF3B31EA0DCA90058DF8D /* MainViewController.swift */; };
 		945DF3B61EA0DCA90058DF8D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945DF3B41EA0DCA90058DF8D /* MainViewController.xib */; };
+		946177561EAA6C5E001F88AD /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946177551EAA6C5E001F88AD /* MenuButton.swift */; };
+		946177571EAA6C5E001F88AD /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946177551EAA6C5E001F88AD /* MenuButton.swift */; };
+		9461775A1EAA6D5A001F88AD /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946177581EAA6D5A001F88AD /* ProfileCell.swift */; };
+		9461775B1EAA6D5A001F88AD /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946177581EAA6D5A001F88AD /* ProfileCell.swift */; };
+		9461775F1EAA6EFD001F88AD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9461775E1EAA6EFD001F88AD /* Button.swift */; };
+		946177601EAA6EFD001F88AD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9461775E1EAA6EFD001F88AD /* Button.swift */; };
+		946177651EAA9203001F88AD /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946177641EAA9203001F88AD /* ProfileImage.swift */; };
+		946177661EAA9203001F88AD /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946177641EAA9203001F88AD /* ProfileImage.swift */; };
 		947C81B41EA2D556005F791B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C81B21EA2D556005F791B /* LoginViewController.swift */; };
 		947C81B51EA2D556005F791B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C81B21EA2D556005F791B /* LoginViewController.swift */; };
 		947C81B61EA2D556005F791B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947C81B31EA2D556005F791B /* LoginViewController.xib */; };
@@ -101,6 +109,10 @@
 		943B67B21EA2A5EE00F05CD8 /* TimerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		945DF3B31EA0DCA90058DF8D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		945DF3B41EA0DCA90058DF8D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		946177551EAA6C5E001F88AD /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		946177581EAA6D5A001F88AD /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		9461775E1EAA6EFD001F88AD /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		946177641EAA9203001F88AD /* ProfileImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		947C81B21EA2D556005F791B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		947C81B31EA2D556005F791B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		94887BCE1E9FFCA100077AB8 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +229,10 @@
 				941FFD1F1EA3655900895E79 /* BigTextField.swift */,
 				940CD64F1EA932E900E67AF6 /* MenuViewController.swift */,
 				940CD6501EA932E900E67AF6 /* MenuViewController.xib */,
+				946177551EAA6C5E001F88AD /* MenuButton.swift */,
+				946177581EAA6D5A001F88AD /* ProfileCell.swift */,
+				9461775E1EAA6EFD001F88AD /* Button.swift */,
+				946177641EAA9203001F88AD /* ProfileImage.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -673,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				940CD6511EA932E900E67AF6 /* MenuViewController.swift in Sources */,
+				946177651EAA9203001F88AD /* ProfileImage.swift in Sources */,
 				940CD6561EA9455000E67AF6 /* Colors.swift in Sources */,
 				941FFD201EA3655900895E79 /* BigTextField.swift in Sources */,
 				941FFD1D1EA3632100895E79 /* PrimaryButton.swift in Sources */,
@@ -682,8 +699,11 @@
 				9493C79E1EA16423003944D2 /* Timer.swift in Sources */,
 				940CD6591EA958BD00E67AF6 /* User.swift in Sources */,
 				94887BD21E9FFCA100077AB8 /* AppDelegate.swift in Sources */,
+				9461775F1EAA6EFD001F88AD /* Button.swift in Sources */,
 				945DF3B51EA0DCA90058DF8D /* MainViewController.swift in Sources */,
+				946177561EAA6C5E001F88AD /* MenuButton.swift in Sources */,
 				943B67B31EA2A5EE00F05CD8 /* TimerCell.swift in Sources */,
+				9461775A1EAA6D5A001F88AD /* ProfileCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +728,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				940CD6521EA932E900E67AF6 /* MenuViewController.swift in Sources */,
+				946177661EAA9203001F88AD /* ProfileImage.swift in Sources */,
 				940CD6571EA9455000E67AF6 /* Colors.swift in Sources */,
 				941FFD211EA3655900895E79 /* BigTextField.swift in Sources */,
 				941FFD1E1EA3632100895E79 /* PrimaryButton.swift in Sources */,
@@ -717,8 +738,11 @@
 				9493C79F1EA16423003944D2 /* Timer.swift in Sources */,
 				940CD65A1EA958BD00E67AF6 /* User.swift in Sources */,
 				9493C78D1EA13D70003944D2 /* AppDelegate.swift in Sources */,
+				946177601EAA6EFD001F88AD /* Button.swift in Sources */,
 				9493C78E1EA13D70003944D2 /* MainViewController.swift in Sources */,
+				946177571EAA6C5E001F88AD /* MenuButton.swift in Sources */,
 				943B67B41EA2A5EE00F05CD8 /* TimerCell.swift in Sources */,
+				9461775B1EAA6D5A001F88AD /* ProfileCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

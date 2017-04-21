@@ -63,7 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       self.mainViewController.dates = []
       self.mainViewController.timers = []
       self.mainViewController.timerList.reloadData()
-      self.menuViewController.user = nil
       self.showLogin(animated: true, onFinish: onFinish)
     }, onFail: { _ in
       self.showLogin(animated: true, onFinish: onFinish)
