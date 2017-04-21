@@ -11,6 +11,7 @@ def pods
   pod '1PasswordExtension'
   pod 'HockeySDK', '~> 4.1.4'
   pod 'SlideMenuControllerSwift'
+  pod 'IHKeyboardAvoiding'
 end
 
 target 'app' do

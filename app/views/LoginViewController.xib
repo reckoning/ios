@@ -16,11 +16,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="app" customModuleProvider="target">
             <connections>
-                <outlet property="EmailField" destination="bhV-15-6rE" id="QWV-db-mXd"/>
-                <outlet property="OTPField" destination="PFC-4u-zSg" id="UB1-Bp-yIc"/>
-                <outlet property="OnePasswordButton" destination="Vxq-JG-Xb7" id="jef-xD-dn9"/>
-                <outlet property="PasswordField" destination="vuu-px-wjd" id="N3h-gY-7EI"/>
-                <outlet property="SubmitButton" destination="sSx-GJ-r8c" id="g6M-Xh-jK9"/>
+                <outlet property="emailField" destination="bhV-15-6rE" id="R5H-lp-7ft"/>
+                <outlet property="formView" destination="cvw-wK-mgB" id="Q4r-b8-BZn"/>
+                <outlet property="onePasswordButton" destination="Vxq-JG-Xb7" id="z6s-fZ-CyY"/>
+                <outlet property="otpField" destination="PFC-4u-zSg" id="EMQ-xu-7HX"/>
+                <outlet property="passwordField" destination="vuu-px-wjd" id="rSz-Nh-Fnj"/>
+                <outlet property="submitButton" destination="sSx-GJ-r8c" id="Ebe-SW-Zuo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -54,7 +55,7 @@
                             <rect key="frame" x="0.0" y="133" width="335" height="29"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSx-GJ-r8c" customClass="PrimaryButton" customModule="app" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="177" width="335" height="34"/>

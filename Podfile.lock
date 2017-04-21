@@ -13,6 +13,7 @@ PODS:
   - HockeySDK (4.1.4):
     - HockeySDK/DefaultLib (= 4.1.4)
   - HockeySDK/DefaultLib (4.1.4)
+  - IHKeyboardAvoiding (3.7)
   - Runes (4.0.1)
   - SlideMenuControllerSwift (3.0.1)
 
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - FontAwesome.swift
   - HexColors
   - HockeySDK (~> 4.1.4)
+  - IHKeyboardAvoiding
   - SlideMenuControllerSwift
 
 SPEC CHECKSUMS:
@@ -38,9 +40,10 @@ SPEC CHECKSUMS:
   FontAwesome.swift: 2d32a3d62195343c2004b7c9043294ed2948553a
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   HockeySDK: 78a3f8bb9100277b531defc56c970369a3ca267a
+  IHKeyboardAvoiding: 4c852fae85667469307678c65f14f5cac8a7be92
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
 
-PODFILE CHECKSUM: 0fdb604b6e179df03cbdb0b46c3122afa94c7318
+PODFILE CHECKSUM: e44e143c71ad08931b4e255d6b467440ce5ffa49
 
 COCOAPODS: 1.2.1
