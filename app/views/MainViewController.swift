@@ -13,7 +13,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
   @IBOutlet var timerList: UITableView!
   var timers: Array<Timer> = []
   var dates: Array<String> = []
-  let primaryColor = UIColor(red:0.259,  green:0.545,  blue:0.792, alpha:1)
 
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
@@ -25,23 +24,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let grayColor = UIColor(red:0.200,  green:0.200,  blue:0.200, alpha:1)
-
     timerList.allowsSelection = false
 
-    let logoutButton = UIBarButtonItem(
+    let menuButton = UIBarButtonItem(
       title: "",
       style: .plain,
       target: self,
-      action: #selector(self.logout)
+      action: #selector(self.openMenu)
     )
-    let logoutButtonAttributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
-    logoutButton.setTitleTextAttributes(logoutButtonAttributes, for: .normal)
-    logoutButton.title = String.fontAwesomeIcon(name: .signOut)
-    logoutButton.tintColor = primaryColor
-    self.navigationItem.leftBarButtonItem = logoutButton
+    let menuButtonAttributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as [String: Any]
+    menuButton.setTitleTextAttributes(menuButtonAttributes, for: .normal)
+    menuButton.title = String.fontAwesomeIcon(name: .bars)
+    menuButton.tintColor = Colors.primary
+    self.navigationItem.leftBarButtonItem = menuButton
     self.navigationController?.navigationBar.titleTextAttributes =
-      [NSForegroundColorAttributeName: grayColor,
+      [NSForegroundColorAttributeName: Colors.color,
        NSFontAttributeName: UIFont(name: "Orbitron-Regular", size: 21)!]
 
     timerList.dataSource = self
@@ -147,7 +144,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.timerList.reloadRows(at: [indexPath], with: .none)
       })
     }
-    action.backgroundColor = primaryColor
     if timer.startedAt != nil {
       action = UITableViewRowAction(
         style: .normal,
@@ -160,6 +156,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         })
       }
     }
+    action.backgroundColor = Colors.primary
     let delete = UITableViewRowAction(style: .default, title: "Löschen") { action, index in
       let appDelegate = UIApplication.shared.delegate as! AppDelegate
       appDelegate.confirmAlert(topic: "Timer löschen", onConfirm: {
@@ -173,7 +170,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     return [action, delete]
   }
-
+  
   //MARK: Actions
 
   func load() {
@@ -186,15 +183,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
       self.refreshControl.endRefreshing()
     }
   }
-
-  func logout() {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    appDelegate.confirmAlert(topic: "Abmelden", onConfirm: {
-      appDelegate.logout(onFinish: {
-        self.timers = []
-        self.dates = []
-        self.timerList.reloadData()
-      })
-    }, onCancel: nil)
+  
+  func openMenu() {
+    self.slideMenuController()?.openLeft()
   }
 }

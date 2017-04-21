@@ -29,8 +29,10 @@ class TimerCell: UITableViewCell {
       }
       interval = Foundation.Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
       runningIndicator.startAnimating()
+      hours.textColor = Colors.primary
     } else {
       runningIndicator.stopAnimating()
+      hours.textColor = Colors.color
     }
     
     title.text = timer.projectName

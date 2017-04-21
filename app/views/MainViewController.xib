@@ -32,6 +32,7 @@
                 <constraint firstAttribute="bottom" secondItem="pxe-Df-2D3" secondAttribute="bottom" id="jNK-hc-0jD"/>
                 <constraint firstItem="pxe-Df-2D3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qcC-fV-vHT"/>
             </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
