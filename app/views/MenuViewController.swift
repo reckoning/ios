@@ -59,9 +59,7 @@ class MenuViewController: UIViewController {
     User.current(onFinish: { (user) in
       self.user = user
       self.emailLabel.text = user.email
-      if (user.avatar != nil) {
-        self.profileImage.setImage(image: user.avatar)
-      }
+      self.profileImage.setImage(image: user.avatar)
     }, onFail: { (error) in
       print(error)
     })

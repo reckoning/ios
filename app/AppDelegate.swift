@@ -52,8 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func showLogin(animated: Bool, onFinish: (() -> Void)?) {
-    UserDefaults.standard.removeObject(forKey: "authToken")
-    UserDefaults.standard.synchronize()
     let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
     window?.rootViewController?.present(loginViewController, animated: animated, completion: onFinish)
   }
@@ -63,6 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       self.mainViewController.dates = []
       self.mainViewController.timers = []
       self.mainViewController.timerList.reloadData()
+      UserDefaults.standard.removeObject(forKey: "authToken")
+      UserDefaults.standard.synchronize()
       self.showLogin(animated: true, onFinish: onFinish)
     }, onFail: { _ in
       self.showLogin(animated: true, onFinish: onFinish)
