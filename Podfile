@@ -9,6 +9,7 @@ def pods
   pod 'FontAwesome.swift'
   pod '1PasswordExtension'
   pod 'HockeySDK', '~> 4.1.4'
+  pod 'SlideMenuControllerSwift'
 end
 
 target 'app' do

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1FA385F6DCB0DE04A47EA107 /* Pods_appAlpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D11CCAD9B9FB9407FDCC0C37 /* Pods_appAlpha.framework */; };
+		940CD6511EA932E900E67AF6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940CD64F1EA932E900E67AF6 /* MenuViewController.swift */; };
+		940CD6521EA932E900E67AF6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940CD64F1EA932E900E67AF6 /* MenuViewController.swift */; };
+		940CD6531EA932E900E67AF6 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940CD6501EA932E900E67AF6 /* MenuViewController.xib */; };
+		940CD6541EA932E900E67AF6 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940CD6501EA932E900E67AF6 /* MenuViewController.xib */; };
+		940CD6561EA9455000E67AF6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940CD6551EA9455000E67AF6 /* Colors.swift */; };
+		940CD6571EA9455000E67AF6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940CD6551EA9455000E67AF6 /* Colors.swift */; };
+		940CD6591EA958BD00E67AF6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940CD6581EA958BD00E67AF6 /* User.swift */; };
+		940CD65A1EA958BD00E67AF6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940CD6581EA958BD00E67AF6 /* User.swift */; };
 		941FFD1D1EA3632100895E79 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941FFD1C1EA3632100895E79 /* PrimaryButton.swift */; };
 		941FFD1E1EA3632100895E79 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941FFD1C1EA3632100895E79 /* PrimaryButton.swift */; };
 		941FFD201EA3655900895E79 /* BigTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941FFD1F1EA3655900895E79 /* BigTextField.swift */; };
@@ -78,6 +86,10 @@
 		87F16802BFA2A7D67F2EB64B /* Pods-timerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-timerTests/Pods-timerTests.release.xcconfig"; sourceTree = "<group>"; };
 		8C335D566685AF1440D9B6BD /* Pods-timerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-timerUITests/Pods-timerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		90F4849005E3407AA4E5A89C /* Pods-timer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timer.release.xcconfig"; path = "Pods/Target Support Files/Pods-timer/Pods-timer.release.xcconfig"; sourceTree = "<group>"; };
+		940CD64F1EA932E900E67AF6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		940CD6501EA932E900E67AF6 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		940CD6551EA9455000E67AF6 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		940CD6581EA958BD00E67AF6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		941FFD1C1EA3632100895E79 /* PrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		941FFD1F1EA3655900895E79 /* BigTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigTextField.swift; sourceTree = "<group>"; };
 		943B679F1EA229EE00F05CD8 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -203,6 +215,8 @@
 				947C81B31EA2D556005F791B /* LoginViewController.xib */,
 				941FFD1C1EA3632100895E79 /* PrimaryButton.swift */,
 				941FFD1F1EA3655900895E79 /* BigTextField.swift */,
+				940CD64F1EA932E900E67AF6 /* MenuViewController.swift */,
+				940CD6501EA932E900E67AF6 /* MenuViewController.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -243,6 +257,7 @@
 				94887BD11E9FFCA100077AB8 /* AppDelegate.swift */,
 				94887BDA1E9FFCA100077AB8 /* Assets.xcassets */,
 				943B679F1EA229EE00F05CD8 /* Configuration.swift */,
+				940CD6551EA9455000E67AF6 /* Colors.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -269,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				9493C79D1EA16423003944D2 /* Timer.swift */,
+				940CD6581EA958BD00E67AF6 /* User.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -425,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				947C81B61EA2D556005F791B /* LoginViewController.xib in Resources */,
+				940CD6531EA932E900E67AF6 /* MenuViewController.xib in Resources */,
 				94887BDB1E9FFCA100077AB8 /* Assets.xcassets in Resources */,
 				945DF3B61EA0DCA90058DF8D /* MainViewController.xib in Resources */,
 				943B67AB1EA26F8600F05CD8 /* Orbitron-Medium.ttf in Resources */,
@@ -454,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				947C81B71EA2D556005F791B /* LoginViewController.xib in Resources */,
+				940CD6541EA932E900E67AF6 /* MenuViewController.xib in Resources */,
 				9493C7921EA13D70003944D2 /* Assets.xcassets in Resources */,
 				9493C7931EA13D70003944D2 /* MainViewController.xib in Resources */,
 				943B67AC1EA26F8600F05CD8 /* Orbitron-Medium.ttf in Resources */,
@@ -654,12 +672,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940CD6511EA932E900E67AF6 /* MenuViewController.swift in Sources */,
+				940CD6561EA9455000E67AF6 /* Colors.swift in Sources */,
 				941FFD201EA3655900895E79 /* BigTextField.swift in Sources */,
 				941FFD1D1EA3632100895E79 /* PrimaryButton.swift in Sources */,
 				94BE729C1EA8074B002D1528 /* ApiClient.swift in Sources */,
 				947C81B41EA2D556005F791B /* LoginViewController.swift in Sources */,
 				943B67A01EA229EE00F05CD8 /* Configuration.swift in Sources */,
 				9493C79E1EA16423003944D2 /* Timer.swift in Sources */,
+				940CD6591EA958BD00E67AF6 /* User.swift in Sources */,
 				94887BD21E9FFCA100077AB8 /* AppDelegate.swift in Sources */,
 				945DF3B51EA0DCA90058DF8D /* MainViewController.swift in Sources */,
 				943B67B31EA2A5EE00F05CD8 /* TimerCell.swift in Sources */,
@@ -686,12 +707,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940CD6521EA932E900E67AF6 /* MenuViewController.swift in Sources */,
+				940CD6571EA9455000E67AF6 /* Colors.swift in Sources */,
 				941FFD211EA3655900895E79 /* BigTextField.swift in Sources */,
 				941FFD1E1EA3632100895E79 /* PrimaryButton.swift in Sources */,
 				94BE729D1EA8074B002D1528 /* ApiClient.swift in Sources */,
 				947C81B51EA2D556005F791B /* LoginViewController.swift in Sources */,
 				943B67A11EA229EE00F05CD8 /* Configuration.swift in Sources */,
 				9493C79F1EA16423003944D2 /* Timer.swift in Sources */,
+				940CD65A1EA958BD00E67AF6 /* User.swift in Sources */,
 				9493C78D1EA13D70003944D2 /* AppDelegate.swift in Sources */,
 				9493C78E1EA13D70003944D2 /* MainViewController.swift in Sources */,
 				943B67B41EA2A5EE00F05CD8 /* TimerCell.swift in Sources */,

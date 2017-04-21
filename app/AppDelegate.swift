@@ -10,19 +10,27 @@ import UIKit
 import Alamofire
 import AlamofireNetworkActivityIndicator
 import HockeySDK
+import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
+  var mainViewController: MainViewController!
+  var menuViewController: MenuViewController!
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
 
-    let mainViewController = MainViewController(nibName: "MainViewController", bundle: nil)
+    mainViewController = MainViewController(nibName: "MainViewController", bundle: nil)
     let navController = UINavigationController(rootViewController: mainViewController)
+    menuViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
 
+    let slideMenuController = SlideMenuController(mainViewController: navController, leftMenuViewController: menuViewController)
+    self.window?.rootViewController = slideMenuController
+    
+    window?.rootViewController = slideMenuController
+    window?.backgroundColor = UIColor.white
     window?.makeKeyAndVisible()
-    window?.rootViewController = navController
 
     if !isAuthenticated() {
       showLogin(animated: false, onFinish: nil)
@@ -52,6 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func logout(onFinish: (() -> Void)?) {
     ApiClient().delete(path: "/sessions", onFinish: { _ in
+      self.mainViewController.dates = []
+      self.mainViewController.timers = []
+      self.mainViewController.timerList.reloadData()
+      self.menuViewController.user = nil
       self.showLogin(animated: true, onFinish: onFinish)
     }, onFail: { _ in
       self.showLogin(animated: true, onFinish: onFinish)
